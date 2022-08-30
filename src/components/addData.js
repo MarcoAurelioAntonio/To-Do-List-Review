@@ -63,10 +63,8 @@ function loadData() {
       window.location.reload();
     });
 
-    // Edit button
+    // Edit button for every task.
     tooltipDiv.addEventListener('click', (event) => {
-      /* event.preventDefault(); */
-      /* console.log('ok'); */
       if (tooltipDiv.textContent === '⁝') {
         descript.removeAttribute('readonly');
         descript.focus();
