@@ -60,7 +60,7 @@ function loadData() {
         descript.style.textDecorationLine = 'none';
         localStorage.setItem('data', JSON.stringify(data));
       }
-      window.location.loadData();
+      window.location.reload();
     });
 
     // Edit button for every task.
@@ -88,11 +88,7 @@ function loadData() {
     });
   }
 }
-
-// Refreshing or loading page
-window.addEventListener('load', () => {
-  loadData();
-});
+loadData();
 
 export {
   addText, loadData,
