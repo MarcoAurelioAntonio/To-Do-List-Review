@@ -1,4 +1,4 @@
-import './style.css';
+/* import './style.css'; */
 import {
   addText, loadData,
 } from './components/addData.js';
@@ -17,7 +17,6 @@ addBtn.addEventListener('click', (e) => {
       index: id,
     };
     listArray.push(task);
-    /* loadData(); */ // call to create the task element.
 
     // Load from local sttorage
     const tasks = localStorage.getItem('data')
