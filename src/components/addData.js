@@ -60,7 +60,7 @@ function loadData() {
         descript.style.textDecorationLine = 'none';
         localStorage.setItem('data', JSON.stringify(data));
       }
-      window.location.reload();
+      window.location.loadData();
     });
 
     // Edit button for every task.
