@@ -58,9 +58,16 @@ body {
   background-color: #d3d3d3;
 }
 
+.delete-btn {
+  width: 25px;
+  font-size: 20px;
+  padding-right: 10px;
+  border: none;
+  background-color: #ffff;
+}
+
 #addBtn {
   width: 15%;
-  padding: 5px;
   font-size: 20px;
   border: none;
   background-color: #ffff;

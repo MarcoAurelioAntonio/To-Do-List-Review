@@ -33,6 +33,11 @@ function loadData() {
     tooltipDiv.textContent = '⁝';
     tooltipDiv.classList.add('tooltip');
 
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.innerHTML = '🗑️';
+    deleteBtn.id = i + 1;
+
     // div container
     const divCont = document.createElement('div');
     divCont.id = i + 1;
@@ -41,6 +46,7 @@ function loadData() {
     divCont.appendChild(check);
     divCont.appendChild(descript);
     divCont.appendChild(tooltipDiv);
+    divCont.appendChild(deleteBtn);
     list.appendChild(divCont);
 
     addText.value = '';
@@ -84,6 +90,20 @@ function loadData() {
         }
         localStorage.setItem('data', JSON.stringify(data));
         window.location.reload();
+      }
+    });
+
+    deleteBtn.addEventListener('click', (event) => {
+      if (event.target.textContent === '🗑️') {
+        event.target.parentElement.remove();
+        const taskid = event.target.id;
+        const taskID = Number(taskid);
+        const data = JSON.parse(localStorage.getItem('data'));
+        const notDeleted = data.filter((x) => x.index !== taskID);
+        for (let i = 0; i < notDeleted.length; i += 1) {
+          notDeleted[i].index = i + 1;
+        }
+        localStorage.setItem('data', JSON.stringify(notDeleted));
       }
     });
   }
